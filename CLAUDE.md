@@ -22,6 +22,24 @@
 - Todo se levanta con `docker compose up`. Ejecuta tests y comandos DENTRO de los contenedores (`docker compose exec api ...`).
 - Dependencias siempre pinneadas. Prompts del sistema en español, en `backend/app/prompts/`.
 
+## Comandos (desde la raíz del repo; ver `Makefile`)
+
+- `cp .env.example .env` y luego `make up` (build + arranque; el primer boot descarga los modelos de Ollama vía `ollama-init`). `make down`, `make logs`.
+- `make test` = `docker compose exec api pytest -q`. Un solo test: `docker compose exec api pytest tests/unit/test_rrf.py::test_nombre -q`. Los tests de `tests/integration/` necesitan Ollama y son lentos.
+- `make lint` = `ruff check .` (backend, line-length 88) + eslint/prettier (frontend). Frontend: `npm run build` hace `tsc -b && vite build`.
+- `make seed` ingesta `data/seed_pdfs/`; `make eval` corre `python -m eval.evaluate` (`backend/eval/evaluate.py`, RAGAS) sobre `eval/dataset.jsonl` y escribe `eval/results.json` (lo muestra la página Eval).
+- Puertos: api 8000, frontend 5173, Postgres 5432, Ollama 11434.
+- `./loop.sh [N]` ejecuta Claude Code en bucle (una tarea de PLAN.md por iteración, con `--dangerously-skip-permissions`).
+
+## Arquitectura (visión general)
+
+- **Pipeline RAG** (`backend/app/graph/`): grafo LangGraph `START → [rewrite_query solo si hay historial] → retrieve → generate → END`, compilado como singleton en `pipeline.py`; el estado está en `state.py` y los nodos en `nodes.py`.
+- **Recuperación híbrida** (`services/retrieval_service.py`): búsqueda vectorial (pgvector HNSW) + full-text (`tsvector` en español), fusionadas con RRF (cubierto por `tests/unit/test_rrf.py`).
+- **Streaming**: `POST /api/chat` responde por SSE (etapas del pipeline, tokens, fuentes citadas `[n]`); el frontend lo consume con `lib/sse.ts` + `hooks/useChatStream.ts`. Mensajes y fuentes se persisten en Postgres.
+- **Ingesta** (`services/ingestion_service.py`): PyMuPDF → chunking por estructura → embeddings, en segundo plano; el estado del documento (`processing → ready`) se consulta por polling desde el frontend (`hooks/useDocuments.ts`).
+- **Providers** (`app/providers/`): `EmbeddingProvider`/`LLMProvider` en `base.py`, implementación Ollama y selección en `factory.py`; es la única capa que conoce el modelo/dimensión.
+- Routers montados en `app/main.py` (`/api/{documents,chat,conversations,eval}` + health sin prefijo).
+
 ## Convenciones de código
 
 - Routers sin lógica de negocio: routers → services → repositories → providers.
