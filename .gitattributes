@@ -1,0 +1,4 @@
+# Los scripts de shell deben conservar finales de línea LF en cualquier plataforma
+# (evita que un checkout en Windows los rompa dentro de los contenedores Linux).
+*.sh text eol=lf
+entrypoint.sh text eol=lf

@@ -1,0 +1,59 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.uv/
+
+# Testing / coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+
+# ---------- Node / Frontend ----------
+node_modules/
+.pnp
+.pnp.js
+dist-ssr/
+*.local
+.vite/
+frontend/dist/
+
+# ---------- Env & secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Editors / OS ----------
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ---------- Logs ----------
+*.log
+.loop-logs/
+
+# ---------- Data ----------
+# Los PDFs del corpus NO se versionan (el README de la carpeta sí)
+data/seed_pdfs/*.pdf

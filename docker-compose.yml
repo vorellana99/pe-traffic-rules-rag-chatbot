@@ -1,0 +1,107 @@
+name: transito-rag
+
+services:
+  # ----------------------------------------------------------
+  # PostgreSQL 16 + pgvector
+  # ----------------------------------------------------------
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-transito_rag}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-transito_rag}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  # ----------------------------------------------------------
+  # Ollama (LLM + embeddings, 100% local)
+  # ----------------------------------------------------------
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      # El binario ollama consulta la API HTTP local (11434); no requiere curl/wget
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+      start_period: 20s
+    restart: unless-stopped
+
+  # ----------------------------------------------------------
+  # ollama-init: one-shot que descarga los modelos y termina
+  # ----------------------------------------------------------
+  ollama-init:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      LLM_MODEL: ${LLM_MODEL:-qwen2.5:7b}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-bge-m3}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        echo "Descargando LLM: $${LLM_MODEL}"
+        ollama pull "$${LLM_MODEL}"
+        echo "Descargando embeddings: $${EMBEDDING_MODEL}"
+        ollama pull "$${EMBEDDING_MODEL}"
+        echo "Modelos listos."
+    restart: "no"
+
+  # ----------------------------------------------------------
+  # API (FastAPI) — build en tarea 0.3
+  # ----------------------------------------------------------
+  api:
+    build:
+      context: ./backend
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+      ollama-init:
+        condition: service_completed_successfully
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app                       # hot-reload en dev
+      - ./data/seed_pdfs:/app/data/seed_pdfs:ro
+      - uploads:/app/uploads
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  # ----------------------------------------------------------
+  # Frontend (Vite dev server) — build en tarea 3.1
+  # Proxy /api -> api:8000 se configura en vite.config (tarea 3.1)
+  # ----------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - api
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  pgdata:
+  ollama_models:
+  uploads:

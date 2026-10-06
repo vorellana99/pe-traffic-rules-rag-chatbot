@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-07-27T19:14:36.303800+00:00",
+  "models": {
+    "llm": "qwen2.5:7b",
+    "embedding": "bge-m3"
+  },
+  "global": {
+    "faithfulness": 0.752,
+    "answer_relevancy": 0.674,
+    "context_precision": 0.8
+  },
+  "per_question": [
+    {
+      "question": "¿Qué sanción corresponde por conducir en estado de ebriedad?",
+      "answer": "Según el artículo 304 del Reglamento Nacional de Tránsito, la sanción correspondiente a conducir en estado de ebriedad es la suspensión de la licencia de conducir por un período mínimo de 6 meses y máximo de 2 años [1].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.95,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Cuál es el grado alcohólico máximo permitido para conducir?",
+      "answer": "Según el artículo 86 del Reglamento Nacional de Tránsito Terrestre, el grado alcohólico máximo permitido para conducir es 0.5 gramos por litro de sangre ([1]).",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Qué sanción se aplica por conducir sin licencia de conducir?",
+      "answer": "No hay información específica en el texto proporcionado sobre la sanción para conducir sin licencia de conducir. El contexto aborda principalmente las sanciones relacionadas con acumulación de puntos por infracciones al tránsito, pero no menciona la falta de licencia de conducir. [1]",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.3,
+      "context_precision": 0.6
+    },
+    {
+      "question": "¿Qué infracción comete quien conduce con una licencia cuya clase o categoría no corresponde al vehículo?",
+      "answer": "[6] (rnt-tuo.pdf, pág. 118) CÓDIGOM40(*)Conducir un vehículo que no corresponda a la clase o categoría de la licencia del conductor(*) Infracción incorporada por el Artículo 2 del D.S. N° 036-2015-MTC, publicado el 27 de noviembre del 2015Muy graveMulta: 12% UIT(50) Retención del vehículoSI",
+      "faithfulness": 0.85,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Cuál es la sanción por cruzar una intersección con el semáforo en luz roja?",
+      "answer": "No se especifica una sanción particular en el texto proporcionado para cruzar una intersección con el semáforo en luz roja. Sin embargo, el artículo 70 establece las reglas para cruzar según los semáforos, indicando que los peatones deben abstenerse de hacerlo cuando se ilumine el campo rojo con el letrero “ALTO”. [6]",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Qué sanción corresponde por circular en sentido contrario al tránsito?",
+      "answer": "Según el contexto proporcionado, no se menciona directamente una infracción relacionada con circular en sentido contrario al tránsito. El artículo más cercano es el 145 que habla sobre la circulación por la derecha, pero no aborda específicamente el tráfico en sentido contrario.\n\nNo obstante, si buscamos sanciones similares a las mencionadas en el anexo de infracciones [6], podemos ver que:\n\nM07. Conducir un vehículo en sentido contrario al tránsito o cruzar la línea central delimitadora.\nMuy Grave\nMulta 12% UIT y retención del VMP Propietario\n\nEsta sanción corresponde a la infracción de circular en sentido contrario al tránsito, aunque no se encuentra explícitamente mencionada en el texto principal proporcionado [n5].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Qué sanción tiene desobedecer las indicaciones del efectivo policial que controla el tránsito?",
+      "answer": "No se especifica una sanción específica en el texto proporcionado para desobedecer las indicaciones del efectivo policial que controla el tránsito. Sin embargo, el artículo 57 establece la obligación de los usuarios de la vía a obedecer inmediatamente las indicaciones sobre el tránsito de estos efectivos [6].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.95
+    },
+    {
+      "question": "¿Qué sanción se aplica por participar en competencias de velocidad no autorizadas?",
+      "answer": "No se encuentra mencionada ninguna infracción relacionada con participar en competencias de velocidad no autorizadas en los documentos proporcionados. La información más cercana es la sanción para M07, que implica una multa de 24% UIT y retención del vehículo propietario por conducir a exceso de velocidad, pero esto se refiere específicamente al exceso de velocidad y no menciona competencias no autorizadas. Por lo tanto, según el contexto proporcionado en [1], no hay una sanción específica para esta infracción.",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.3,
+      "context_precision": 0.95
+    },
+    {
+      "question": "¿Qué sanción corresponde a quien permite que un menor de edad conduzca un vehículo?",
+      "answer": "No se encuentra una sanción específica para permitir que un menor de edad conduzca en el texto proporcionado. Sin embargo, la normativa menciona responsabilidades administrativas en caso de no identificar al conductor infractor ([6], Artículo 289). Se recomendaría consultar el Anexo cuadro de tipificación, sanciones y medidas preventivas aplicables a las infracciones al tránsito terrestre para buscar la sanción correspondiente, pero no se incluye en el contexto proporcionado [5].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.6,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Qué sanción hay por conducir un vehículo con los frenos o las luces en mal estado?",
+      "answer": "No se menciona explícitamente en el texto proporcionado ninguna sanción específica por conducir un vehículo con los frenos o las luces en mal estado. El texto aborda temas relacionados con la iluminación vehicular, pero no incluye una infracción o sanción directa para este caso particular [n].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.6,
+      "context_precision": 0.6
+    },
+    {
+      "question": "¿Cuál es el límite máximo de velocidad en avenidas de zona urbana?",
+      "answer": "Según el Reglamento Nacional del Tráfico de Vehículos y Peatones, el límite máximo de velocidad en avenidas de zona urbana es de 50 km/h [3].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.8
+    },
+    {
+      "question": "¿Cuál es el límite máximo de velocidad para automóviles en carreteras?",
+      "answer": "Según el Reglamento Nacional de Tránsito, el límite máximo de velocidad para automóviles en carreteras es de 100 km/h [3].",
+      "faithfulness": 0.3,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Cuál es el límite de velocidad en una zona escolar?",
+      "answer": "Según el Reglamento Nacional de Tránsito Terrestre, no se especifica un límite de velocidad específico para las zonas escolares. Sin embargo, la definición actualizada de \"Zona escolar\" indica que en esta área se pueden establecer medidas para proteger a los usuarios vulnerables, lo cual podría implicar limitaciones de velocidad, aunque esto no está explícitamente mencionado como un límite fijo [1].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.6,
+      "context_precision": 0.95
+    },
+    {
+      "question": "¿Cuál es el límite de velocidad en zonas residenciales de carreteras que cruzan centros poblados?",
+      "answer": "Según el artículo 162 del Reglamento Nacional de Tránsito, la velocidad máxima permitida en las zonas residenciales de carreteras que cruzan centros poblados es de 40 km/h ([3], pág. 70).",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.95,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Qué margen de tolerancia se aplica sobre las velocidades máximas permitidas?",
+      "answer": "Según el Reglamento Técnico Único del Tránsito, no se especifica un margen de tolerancia exacto sobre las velocidades máximas permitidas. Sin embargo, se menciona que en intersecciones urbanas no semaforizadas y en cruces de ferrocarril a nivel sin barrera ni semáforos, la velocidad no debe superar la velocidad precautoria ([1], Artículos 164.a) y b)). Aunque esto no define un margen específico, implica que los conductores deben mantenerse por debajo de las velocidades máximas permitidas en condiciones normales, aplicando una velocidad prudente o precautoria.",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.6,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Cómo se determinan los límites mínimos de velocidad?",
+      "answer": "Según el Reglamento Nacional de Tránsito - Título Único Ordinario, en su artículo 167, los límites de velocidad mínimos se pueden establecer excepcionalmente por la autoridad competente a cargo de la gestión de la vía, teniendo en cuenta las condiciones y características geométricas de las vías, condiciones meteorológicas, volúmenes y composición del tránsito, con la finalidad de proteger la seguridad vial. En zonas urbanas reguladas en el artículo 162 y supuestos regulados en el artículo 163, esta excepcionalidad faculta a que las autoridades competentes sólo puedan establecer límites de velocidad inferiores a las establecidas en el presente Reglamento [5].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Qué requisitos generales se exigen para obtener una licencia de conducir?",
+      "answer": "Para obtener una licencia de conducir, según los artículos mencionados en el contexto, se requieren varios requisitos generales:\n\n1. Tener un nivel educativo mínimo:\n   - Primaria completa para la clase A - Categoría IIB (Artículo 14 [5])\n\n2. Cumplir con ciertas condiciones de salud y seguridad:\n   - Certificado de salud expedido y registrado en el Sistema Nacional de Conductores (Artículo 23 [6] literal g)\n\n3. Tener una licencia vigente o la bonificación correspondiente para recategorización:\n   - Licencia de clase A - Categoría IIIA o IIIB vigente con una antigüedad no menor de un año, o\n   - Licencia de clase A - Categoría IIB vigente con una antigüedad no menor de cuatro años (Artículo 14 [6] literal c)\n\n4. No tener multas pendientes ni estar inhabilitado:\n   - No contar con multas pendientes de pago ni sanciones por infracciones tipificadas en el Anexo I del Reglamento Nacional de Tránsito (Artículo 23 [6] literal d)\n   - No estar suspendido o inhabilitado según la información del Registro Nacional de Sanciones (Artículo 23 [6] literal e)\n\n5. Aprobar exámenes:\n   - Aprobación del examen de conocimientos, previamente registrada en el Sistema Nacional de Conductores (Artículo 23 [6] literal j)\n   - Aprobación del examen de habilidades en la conducción para la categoría, previamente registrada en el Sistema Nacional de Conductores (Artículo 23 [6] literal k)\n\n6. Otros requisitos:\n   - Constancia de finalización del Taller “Cambiemos de Actitud” expedida y registrada en el Sistema Nacional de Conductores (Artículo 14 [6] literal i)\n   - Declaración jurada de no estar privado por resolución judicial firme con calidad de cosa juzgada del derecho a conducir vehículos del transporte terrestre (Artículo 23 [6] literal f)",
+      "faithfulness": 0.85,
+      "answer_relevancy": 0.95,
+      "context_precision": 0.8
+    },
+    {
+      "question": "¿Cuál es la edad mínima para obtener una licencia de conducir?",
+      "answer": "La edad mínima para obtener una licencia de conducir, según los requisitos mencionados en el texto, es de 18 años. Esto se aplica a las categorías A - Categoría I, B (todas sus categorías), II-B y II-C [5][6].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.95
+    },
+    {
+      "question": "¿Ante qué entidad se tramita una licencia de conducir de clase A y una de clase B?",
+      "answer": "[2] Ante cualquier DRT se tramita una licencia de conducir de clase A, mientras que ante cualquier Municipalidad Provincial se tramita una licencia de conducir de clase B.",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.3,
+      "context_precision": 0.95
+    },
+    {
+      "question": "¿Cuál es la vigencia de la primera licencia de conducir de clase A categoría I?",
+      "answer": "El texto no proporciona información específica sobre la vigencia de la primera licencia de conducir de clase A categoría I. Por lo tanto, no se puede determinar la vigencia de dicha licencia basándose en el contexto dado [5].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8,
+      "context_precision": 1.0
+    },
+    {
+      "question": "Si me detienen conduciendo sin licencia, ¿qué código de infracción del cuadro de sanciones cometo y ante qué entidad debo tramitar una licencia de clase A?",
+      "answer": "Según el Código de Tránsito peruano, la infracción a la conducción sin poseer la correspondiente licencia de conducir se clasifica bajo el código M.10 [5] (licencias-ds007-2016.pdf, pág. 98). \n\nPara tramitar la licencia de clase A, debes dirigirte a la Dirección General de Tránsito y Transporte Terrestre (DGTT) [6] (rnt-tuo.pdf, pág. 5).",
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.85
+    },
+    {
+      "question": "Un conductor usa una licencia de una categoría que no corresponde al vehículo: ¿qué infracción comete y qué exige el reglamento de licencias para conducir esa categoría?",
+      "answer": "[5] (licencias-ds007-2016.pdf, pág. 25)\n\nUn conductor que usa una licencia de una categoría que no corresponde al vehículo comete la infracción M40, según el reglamento de licencias para conducir. Este acto es considerado muy grave y se especifica lo siguiente:\n\n- La primera vez: MULTA de 5% UIT añadiendo el monto de S/. 50.00 nuevos soles por cada mes que haya transcurrido sin revalidar hasta la fecha de comisión de la infracción.\n- La segunda vez: MULTA de 30% UIT añadiendo el monto de S/. 50.00 nuevos soles por cada mes que haya transcurrido sin revalidar hasta la fecha de comisión de la infracción.\n- La tercera vez: MULTA de 60% UIT añadiendo el monto de S/. 50.00 nuevos soles por cada mes que haya transcurrido sin revalidar hasta la fecha de comisión de la infracción + inhabilitación por un (1) año para obtener una Licencia de Conducir.\n- En todos los casos, se exige el internamiento del vehículo.",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.85
+    },
+    {
+      "question": "¿Cómo transfiero la propiedad de un vehículo a otra persona?",
+      "answer": "[3] Los vehículos son de propiedad de un tercero, la solicitante debe acreditar la posesión legal mediante copia del contrato vigente entre las partes.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.3,
+      "context_precision": 0.0
+    },
+    {
+      "question": "¿Cuánto cuesta el SOAT y dónde puedo comprarlo?",
+      "answer": "Según el anexo 1 de la normativa, no se proporciona información específica sobre el costo del SOAT ni sobre cómo o dónde adquirirlo. La información más relevante relacionada con el SOAT que se menciona en ese documento es sobre las infracciones relacionadas con él [5].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.2,
+      "context_precision": 0.6
+    },
+    {
+      "question": "¿Cómo obtengo la tarjeta de identificación vehicular?",
+      "answer": "No se encuentra información específica sobre cómo obtener la tarjeta de identificación vehicular en el contexto proporcionado. Las referencias a esta documentación son más bien para su exhibición durante controles de tránsito, no para su obtención. Por lo tanto, no puedo proporcionar detalles sobre el proceso de adquisición basándome únicamente en este contexto [2][5].",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.1,
+      "context_precision": 0.65
+    }
+  ]
+}
